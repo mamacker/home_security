@@ -1,0 +1,12 @@
+[Unit]
+Description=Home Security Service
+After=network-online.target
+ 
+[Service]
+ExecStart=/usr/bin/nodejs /home/pi/home_security/index.js
+StandardOutput=syslog
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+Alias=home_security.service
